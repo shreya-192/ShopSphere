@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSphere.com</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2874f0;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar .logo a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-items {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: #2874f0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* box2 */
+.nav-add{
+    padding: 3px;
+}
+.add-icon{
+    display: flex;
+    align-items: center;
+}
+.add1{
+    color: #CCCCCC;
+    font-size: 0.8rem;
+    margin: 10px;
+}
+.add2{
+    font-size: 1rem;
+    margin-left: 3px;
+}
+/* box3 */
+.nav-search{
+    display:flex;
+    justify-content: space-evenly;
+    background-color: pink;
+    width: 760px;
+    height:40px;
+    border-radius: 4px;
+}
+.nav-search:hover{
+      border: 2px solid orange;
+}
+.search{
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #F3F3F3;
+    width:50px;
+    text-align: center;
+    border: none;
+}
+option{
+    text-align: start;
+}
+.search-input{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+.search-add{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #febd68;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: #0f1111;
+}
+/* box4 */
+.state{
+    display: flex;
+    padding: 10px;
+}
+.select{
+    border: none;
+    font-weight: bold;
+    visibility: visible;
+}
+
+/* box5 */
+.nav-signin{
+    color: #ffff;
+    padding: 5px;
+}
+span{
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.nav2{
+    font-size: 1rem;
+    font-weight: bold;
+}
+/* box6 */
+.cart i{
+    font-size: 30px;
+ }
+ .cart{
+     font-size: 0.85rem;
+     font-weight: 700;
+     padding: 5px;
+ }
+
+/* second panel */
+
+.panel{
+    height: 40px;
+    background-color: #222f3d;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.panel-all{
+    padding: 4px;
+}
+
+.panel-ops p{
+    display: inline;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+.panel-ops{
+    width: 70%;
+    font-size: 0.85rem;
+}
+
+.panel-deals{
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 4px;
+}
+
+/* hero section */
+
+.hero-section{
+    background-image: url(amazon/school.jpg);
+   height: 600px;
+   background-size: cover;
+
+}
+
+.para{
+    height: 40px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    position: relative;
+    top: 250px;
+}
+
+.para a{
+    color: #007185;
+    text-decoration: none;
+}
+/* shop section */
+.shop-center{
+   display: flex;
+    justify-content: space-evenly;
+    background-color: #e2e7e2;
+}
+.box{
+   height: 360px;
+   width: 23%;
+   background-color: white;
+   position: relative;
+   bottom: 290px;
+   padding: 20px 0px 15px;
+}
+.box:hover{
+    transform: scale(1.02); 
+}
+.box-image{
+    height: 300px;
+    background-size:cover ;
+}
+
+.box-content{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.box-content p{
+   color: #007185;
+   margin-top: 10px;
+}
+
+.box-content h2{
+    margin-bottom: 8px;
+}
+
+.shop-center2{
+    display: flex;
+     justify-content: space-evenly;
+     background-color: #e2e7e2;
+     position: relative;
+     top: 15px;
+ }
+ 
+.shop-center3{
+    display: flex;
+     justify-content: space-evenly;
+     background-color: #e2e7e2;
+     position: relative;
+     top: 15px;
+     
+ }
+ .box-one{
+    
+        height: 260px;
+        width: 100%;
+        background-color: white;
+        position: relative;
+        bottom: 290px;
+        padding: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 15px;
+ } 
+ .box-content1{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+ }
+ .box-image1{
+    height: 210px;
+    width: 150px;
+    background-size: cover;
+    
+ }
+
+ /* footer */
+
+ .foot-panel1{
+    background-color: #37475a;
+    color: white;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    position: relative;
+    bottom: 260px;
+ }
+ .foot-panel2{
+    background-color: #222f3d;
+    color: white;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 260px;
+
+ }
+ ul{
+    margin-top: 20px;
+ }
+ ul a{
+    display: block;
+    color: #dddddd;
+    margin-top: 10px;
+    text-decoration: none;
+ }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+              <a href="#">Flipkart</a>
+            </div>
+      
+            <!-- Login Dropdown -->
+            <div class="dropdown">
+              <button class="dropdown-btn">Login</button>
+              <div class="dropdown-content">
+                <a href="#">Sign Up</a>
+                <a href="#">My Account</a>
+                <a href="#">Orders</a>
+              </div>
+            </div>
+      
+            <!-- Navigation Panel -->
+            <div class="nav-items">
+              <div class="dropdown">
+                <button class="dropdown-btn">Electronics</button>
+                <div class="dropdown-content">
+                  <a href="#">Mobiles</a>
+                  <a href="#">Laptops</a>
+                  <a href="#">Cameras</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropdown-btn">Fashion</button>
+                <div class="dropdown-content">
+                  <a href="#">Men</a>
+                  <a href="#">Women</a>
+                  <a href="#">Kids</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropdown-btn">Home & Furniture</button>
+                <div class="dropdown-content">
+                  <a href="#">Sofa</a>
+                  <a href="#">Beds</a>
+                  <a href="#">Chairs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+     </header>
+     <div class="carousel-container">
+        <div class="carousel">
+          <img class="carousel-slide" src="flipcart/image 2.jpeg" alt="Ad 1">
+          <img class="carousel-slide" src="flipcart/img 1.jpeg" alt="Ad 2">
+          <img class="carousel-slide" src="https://via.placeholder.com/1200x500?text=Ad+3" alt="Ad 3">
+        </div>
+      </div>
+    
+   <div class="hero-section">
+    <div class="para">
+        <p>You are on ShopSphere.com. You can also shop on Amazon India for millions of products with fast local <a href="#"> Click here to go to ShopSphere.in</a></p>
+    </div>
+    
+   </div>
+
+    <!-- shopping items -->
+   <div class="shop-center">
+     <div class="box1 box">
+      <div class="box-content">
+        <h2>Toys under $25</h2>
+        <div class="box-image" style="background-image:url('amazon/6thbox.jpg');">
+            </div>
+            <p><a href="#">See more</a></p>
+      </div>
+     </div>
+     <div class="box2 box">
+        <div class="box-content">
+            <h2>Shop School Supplies</h2>
+            <div class="box-image" style="background-image:url('amazon/school.jpeg');">
+                </div>
+                <p><a href="#">See more</a></p>
+          </div>
+     </div>
+     <div class="box3 box">
+        <div class="box-content">
+            <h2>Beauty Pics</h2>
+            <div class="box-image" style="background-image:url('amazon/beauty.png');">
+                </div>
+                <p><a href="#">See more</a></p>
+          </div>
+      </div>
+     <div class="box4 box">
+        <div class="box-content">
+            <h2>Deals in PCs</h2>
+            <div class="box-image" style="background-image:url('amazon/pc.jpg');">
+                </div>
+                <p><a href="#">See more</a></p>
+          </div>
+     </div>
+     </div>
+
+    </div>
+
+    <div class="shop-center2">
+        <div class="box1 box">
+         <div class="box-content">
+           <h2>Gaming accessories</h2>
+           <div class="box-image" style="background-image:url('amazon/headphone.jpg');">
+               </div>
+               <p><a href="#">See more</a></p>
+         </div>
+        </div>
+        <div class="box2 box">
+           <div class="box-content">
+               <h2>Refresh your space</h2>
+               <div class="box-image" style="background-image:url('amazon/refresh-space.jpeg');">
+                   </div>
+                   <p><a href="#">See more</a></p>
+             </div>
+        </div>
+        <div class="box3 box">
+           <div class="box-content">
+               <h2>Trackers &   smartwatches</h2>
+               <div class="box-image" style="background-image:url('amazon/smart-watch.jpg');">
+                   </div>
+                   <p><a href="#">See more</a></p>
+             </div>
+         </div>
+        <div class="box4 box">
+           <div class="box-content">
+               <h2>Have more fun with family</h2>
+               <div class="box-image" style="background-image:url('amazon/toys.jpeg');">
+                   </div>
+                   <p><a href="#">See more</a></p>
+             </div>
+         </div>
+        </div>
+    </div> 
+     
+    <div class="shop-center3">
+        <div class="box-one">
+            <h2>Top Seller in Books for you</h2>
+        <div class="box-content1">
+           <div class="box-image1" style="background-image:url('amazon/first-book.jpg');">
+               </div>
+               <div class="box-image1" style="background-image:url('amazon/second-image.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/third-book.jpg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/fourth-book.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/fifth-book.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/sixth-book.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/last-book.jpeg');">
+            </div>
+         </div>
+         <p><a href="#">See more</a></p>
+    </div>
+    </div>
+    <div class="shop-center3">
+        <div class="box-one">
+            <h2>Beauty Products</h2>
+        <div class="box-content1">
+           <div class="box-image1" style="background-image:url('amazon/beauty1.jpeg');">
+               </div>
+               <div class="box-image1" style="background-image:url('amazon/beauty2.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/beauty2.jpg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/beauty4.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/beauty5.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/beauty6.jpeg');">
+            </div>
+            <div class="box-image1" style="background-image:url('amazon/beauty.png');">
+            </div>
+         </div>
+         <p><a href="#">See more</a></p>
+    </div>
+</div>
+    <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+        <div class="foot-panel2">
+           <ul>
+            <p>Get to Know Us</p>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">About Amazon</a>
+            <a href="#">Investor relations</a>
+            <a href="#">Amazon Ralations</a>
+            <a href="#">Amazon Sciences</a>
+        </ul> 
+        <ul>
+            <p>Make Money with Us</p>
+            <a href="#">Sell products on Amazon</a>
+            <a href="#">Sell on Amazon Business</a>
+            <a href="#">Sell apps on Amazon</a>
+            <a href="#">Become an Affiliate</a>
+            <a href="#">Advertise Your Products</a>
+            <a href="#">Advertise Your Products</a>
+            <a href="#"> Self-Publish with Us</a>
+            <a href="#"> Host an Amazon Hub</a>
+            <a href="#">›See More Make Money with Us</a>
+        </ul> 
+        <ul>
+            <p>Amazon Payment Products</p>
+            <a href="#">Amazon Business Card</a>
+            <a href="#">Shop with Points</a>
+            <a href="#">Reload Your Balance</a>
+            <a href="#"> Amazon Currency Converter</a>
+        </ul> 
+        <ul>
+            <p>Let Us Help You </p>
+            <a href="#">Amazon and COVID-19</a>
+            <a href="#">Your Account</a>
+            <a href="#">Your Orders</a>
+            <a href="#">Shipping Rates & Policies</a>
+            <a href="#">Returns & Replacements</a>
+            <a href="#">Manage Your Content and Devices</a>
+            <a href="#">Help</a>
+        </ul> 
+        </div>
+
+    </footer>
+    <script>
+        function searchItems() {
+            const input = document.getElementById('search-input').value;
+            const category = document.getElementById('search-category').value;
+            alert(`Searching for "${input}" in category "${category}"`);
+        }
+
+        function toggleMenu() {
+            const panelOps = document.getElementById('panel-ops');
+            if (panelOps.style.display === "none") {
+                panelOps.style.display = "block";
+            } else {
+                panelOps.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
